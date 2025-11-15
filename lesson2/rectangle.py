@@ -14,7 +14,7 @@ class Rectangle:
     width: float
     height: float
     diagonal : float
-    # aspect_ratio: float
+    aspect_ratio: float
 
     def __init__(self, width, height):
         self.width = width
