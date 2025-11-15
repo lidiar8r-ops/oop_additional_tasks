@@ -13,18 +13,21 @@
 """
 
 class Number:
+    value : int
+    value = 0
 
     def __init__(self, value):
-        ...
+        """Метод для инициализации экземпляра класса. Задаем значения атрибутам экземпляра."""
+        self.value = value
 
-    def ...(self):
-        ...
+    def get(self):
+        return self.value
 
-    def ...:
-        ...
+    def add(self, variable):
+        self.value += variable
 
-    def ...:
-        ...
+    def substract(self, variable):
+        self.value -= variable
 
 
 # код для проверки 
