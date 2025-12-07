@@ -6,23 +6,40 @@
 
 
 class Employee:
-
     def __init__(self, pay):
         self.pay = pay
 
+    def __add__(self, other):
+        if isinstance(other, Employee):
+            return self.pay + other.pay
+        elif str(other).isnumeric():
+            return self.pay + other
+        else:
+            raise TypeError('прибавлять можно было только числа или другие объекты дочерних классов Employee')
 
 class Client:
 
     def __init__(self, pay):
         self.pay = pay
 
+    def __add__(self, other):
+        if isinstance(other, Employee):
+            return other.pay
+        elif str(other).isnumeric():
+            return other
+        else:
+            raise TypeError('прибавлять можно было только числа или другие объекты дочерних классов Employee')
+
 
 class Developer(Employee):
-    pass
+    def __init__(self, pay):
+        super().__init__(pay)
 
 
 class Manager(Employee):
-    pass
+    def __init__(self, pay):
+        super().__init__(pay)
+
 
 # код для проверки
 users = [Employee(50000), Client(100000), Developer(50000), Manager(50000)]
